@@ -7,7 +7,10 @@
     {
       "name": "jira-fallback",
       "description": "Jira Cloud REST API skill — a Python-based fallback for the Jira MCP",
-      "source": ".",
+      "source": {
+        "source": "github",
+        "repo": "Alex-Izquierdo/jira-fallback-skill"
+      },
       "version": "0.2.0"
     }
   ]
