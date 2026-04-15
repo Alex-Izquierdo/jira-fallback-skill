@@ -16,7 +16,7 @@ allowed-tools:
 # Jira REST API Skill
 
 Interact with Jira Cloud via the official REST API v3 using a Python helper script. All
-requests are made through `scripts/jira-api.py`, which reads credentials from environment
+requests are made through `${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py`, which reads credentials from environment
 variables — no shell variable expansion is needed in commands.
 
 **Source of truth for all API details:** https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/
@@ -39,7 +39,7 @@ See `references/authentication.md` for how to generate a token and verify the se
 
 ## How to Run Commands
 
-Use the Python script at `scripts/jira-api.py` for all API calls:
+Use the Python script at `${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py` for all API calls:
 
 ```bash
 python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py METHOD ENDPOINT [JSON_BODY]
@@ -163,7 +163,7 @@ See `references/jql-reference.md` for JQL syntax, common fields, operators, and 
 
 ## Additional Resources
 
-- **`scripts/jira-api.py`** — The Python API client used for all operations
+- **`${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py`** — The Python API client used for all operations
 - **`references/authentication.md`** — Token generation, env var setup, auth verification
 - **`references/api-operations.md`** — Complete curl examples for every supported operation
 - **`references/jql-reference.md`** — JQL syntax guide and query examples
