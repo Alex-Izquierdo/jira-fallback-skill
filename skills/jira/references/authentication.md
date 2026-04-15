@@ -18,7 +18,7 @@ before invoking the skill:
 ```bash
 export JIRA_URL="https://mycompany.atlassian.net"   # No trailing slash
 export JIRA_USERNAME="you@example.com"               # Atlassian account email
-export JIRA_PERSONAL_TOKEN="ATATT3x..."              # API token (see below)
+export JIRA_PERSONAL_TOKEN="sometoken"              # API token (see below)
 ```
 
 ---

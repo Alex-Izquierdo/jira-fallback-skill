@@ -6,16 +6,16 @@ allowed-tools:
   - Bash
 ---
 
-Load and apply the `jira` skill from this plugin (skills/jira/SKILL.md) to fulfill the
-user's request. Use the Python API client at `skills/jira/scripts/jira-api.py` for all
+Load and apply the `jira` skill from this plugin to fulfill the user's request. Use the
+Python API client at `${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py` for all
 Jira REST API calls. The script reads `JIRA_URL`, `JIRA_USERNAME`, and `JIRA_PERSONAL_TOKEN`
 from environment variables internally — never use shell variable expansion in commands.
 
 Follow all guidance in the skill, including:
-- Use `scripts/jira-api.py` for every API call (no inline curl)
+- Use `${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py` for every API call (no inline curl)
 - ADF format for rich-text fields (description, comments)
-- `--jql` flag for search queries (auto-encodes)
-- Pagination with `--start-at` and `--max-results`
+- `search` subcommand for JQL queries (auto-encodes, uses POST /rest/api/3/search/jql)
+- Pagination with `--max-results` and `--next-page`
 
 If environment variables are missing, report which ones are unset and direct the user
 to `references/authentication.md` for setup instructions.

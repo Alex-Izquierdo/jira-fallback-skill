@@ -42,11 +42,8 @@ See `references/authentication.md` for how to generate a token and verify the se
 Use the Python script at `scripts/jira-api.py` for all API calls:
 
 ```bash
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py METHOD ENDPOINT [JSON_BODY]
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py METHOD ENDPOINT [JSON_BODY]
 ```
-
-Replace `PLUGIN_ROOT` with the absolute path to this plugin directory. To find it, read
-the path of this SKILL.md file and derive the plugin root from it.
 
 The script handles authentication, JSON formatting, URL encoding, and error reporting
 internally. Output is always pretty-printed JSON.
@@ -54,9 +51,9 @@ internally. Output is always pretty-printed JSON.
 ### GET requests
 
 ```bash
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py GET /rest/api/3/myself
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py GET /rest/api/3/issue/FOO-123
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py GET /rest/api/3/issue/FOO-123 --fields summary,status,assignee
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py GET /rest/api/3/myself
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py GET /rest/api/3/issue/FOO-123
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py GET /rest/api/3/issue/FOO-123 --fields summary,status,assignee
 ```
 
 ### JQL search
@@ -65,15 +62,15 @@ Use the `search` subcommand — it uses `POST /rest/api/3/search/jql` (the curre
 handles encoding automatically:
 
 ```bash
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py search 'project=FOO AND status=Open' --max-results 20
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py search 'assignee=currentUser() AND resolution=Unresolved' --max-results 50
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py search 'parent = ANSTRAT-1899' --fields summary,issuetype,status
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py search 'project=FOO AND status=Open' --max-results 20
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py search 'assignee=currentUser() AND resolution=Unresolved' --max-results 50
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py search 'parent = ANSTRAT-1899' --fields summary,issuetype,status
 ```
 
 For pagination, use the `nextPageToken` from the response with `--next-page`:
 
 ```bash
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py search 'project=FOO' --max-results 20 --next-page 'TOKEN_FROM_PREVIOUS_RESPONSE'
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py search 'project=FOO' --max-results 20 --next-page 'TOKEN_FROM_PREVIOUS_RESPONSE'
 ```
 
 **Note:** The old `GET /rest/api/3/search` endpoint is deprecated (returns 410). Always use the `search` subcommand instead.
@@ -83,11 +80,11 @@ python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py search 'project=FOO' --max-r
 Pass the JSON body as the third argument:
 
 ```bash
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py POST /rest/api/3/issue '{"fields": {"project": {"key": "FOO"}, "summary": "New bug", "issuetype": {"name": "Bug"}, "description": {"type": "doc", "version": 1, "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Description here."}]}]}}}'
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py POST /rest/api/3/issue '{"fields": {"project": {"key": "FOO"}, "summary": "New bug", "issuetype": {"name": "Bug"}, "description": {"type": "doc", "version": 1, "content": [{"type": "paragraph", "content": [{"type": "text", "text": "Description here."}]}]}}}'
 
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py PUT /rest/api/3/issue/FOO-123 '{"fields": {"summary": "Updated summary"}}'
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py PUT /rest/api/3/issue/FOO-123 '{"fields": {"summary": "Updated summary"}}'
 
-python3 PLUGIN_ROOT/skills/jira/scripts/jira-api.py DELETE /rest/api/3/issue/FOO-123
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/jira/scripts/jira-api.py DELETE /rest/api/3/issue/FOO-123
 ```
 
 ---

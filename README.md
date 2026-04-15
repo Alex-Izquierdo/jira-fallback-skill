@@ -75,8 +75,7 @@ Add them to `~/.bashrc`, `~/.zshrc`, or your preferred shell profile to persist 
 
 ### Permissions
 
-The plugin ships with a `.claude/settings.json` that pre-approves the specific
-script that needs to run:
+You might want to add permission to your claude settings: 
 
 ```json
 {
@@ -85,9 +84,6 @@ script that needs to run:
   }
 }
 ```
-
-This scopes the permission to only the Jira API script — no other Python
-commands are auto-approved.
 
 ---
 
