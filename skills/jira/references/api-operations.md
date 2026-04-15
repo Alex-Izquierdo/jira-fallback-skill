@@ -5,7 +5,7 @@ All examples assume:
 ```bash
 export JIRA_URL="https://mycompany.atlassian.net"
 export JIRA_USERNAME="you@example.com"
-export JIRA_PERSONAL_TOKEN="ATATT3x..."
+export JIRA_PERSONAL_TOKEN="sometoken..."
 ```
 
 Pipe output through `| python3 -m json.tool` or `| jq .` for readable JSON.

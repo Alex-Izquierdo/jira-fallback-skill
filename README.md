@@ -28,6 +28,13 @@ via a Python helper script — a lightweight fallback for when the Jira MCP is u
 
 ## Installation
 
+
+# add the repo as a marketplace
+/plugin marketplace add Alex-Izquierdo/jira-fallback-skill
+
+# Install the plugin from it
+/plugin install jira-fallback@Alex-Izquierdo/jira-fallback-skill
+
 ### From the repository
 
 ```bash
@@ -53,7 +60,7 @@ Set the following environment variables before starting Claude Code:
 ```bash
 export JIRA_URL="https://yourcompany.atlassian.net"   # No trailing slash
 export JIRA_USERNAME="you@example.com"                 # Atlassian account email
-export JIRA_PERSONAL_TOKEN="ATATT3x..."                # API token (see below)
+export JIRA_PERSONAL_TOKEN="sometoken..."                # API token (see below)
 ```
 
 Add them to `~/.bashrc`, `~/.zshrc`, or your preferred shell profile to persist across sessions.
@@ -122,7 +129,7 @@ Read-only operations against a live Jira instance:
 # Required
 export JIRA_URL="https://yourcompany.atlassian.net"
 export JIRA_USERNAME="you@example.com"
-export JIRA_PERSONAL_TOKEN="ATATT3x..."
+export JIRA_PERSONAL_TOKEN="sometoken..."
 
 # Optional: set a known issue key to test single-issue fetching
 export JIRA_TEST_ISSUE="FOO-1"

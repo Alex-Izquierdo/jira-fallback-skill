@@ -31,7 +31,7 @@ Three environment variables must be set before using any command:
 |---|---|---|
 | `JIRA_URL` | Base URL of the Jira instance | `https://mycompany.atlassian.net` |
 | `JIRA_USERNAME` | Atlassian account email | `you@example.com` |
-| `JIRA_PERSONAL_TOKEN` | Atlassian API token | `ATATT3x…` |
+| `JIRA_PERSONAL_TOKEN` | Atlassian API token | `sometoken…` |
 
 See `references/authentication.md` for how to generate a token and verify the setup.
 

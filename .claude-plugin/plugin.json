@@ -1,11 +1,11 @@
 {
   "name": "jira-fallback",
   "version": "0.1.0",
-  "description": "Jira Cloud REST API skill — a curl-based fallback for the Jira MCP",
+  "description": "Jira Cloud REST API skill — a Python-based fallback for the Jira MCP",
   "author": {
     "name": "Alex"
   },
-  "repository": "https://github.com/alex/jira-fallback-skill",
+  "repository": "https://github.com/Alex-Izquierdo/jira-fallback-skill",
   "license": "MIT",
-  "keywords": ["jira", "atlassian", "rest-api", "curl"]
+  "keywords": ["jira", "atlassian", "rest-api", "python"]
 }
