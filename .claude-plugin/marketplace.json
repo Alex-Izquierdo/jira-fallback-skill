@@ -1,0 +1,11 @@
+{
+  "name": "jira-fallback-skill",
+  "description": "Marketplace for the jira-fallback plugin",
+  "plugins": [
+    {
+      "name": "jira-fallback",
+      "description": "Jira Cloud REST API skill — a Python-based fallback for the Jira MCP",
+      "path": "."
+    }
+  ]
+}
