@@ -30,10 +30,11 @@ via a Python helper script — a lightweight fallback for when the Jira MCP is u
 
 
 # add the repo as a marketplace
-/plugin marketplace add Alex-Izquierdo/jira-fallback-skill
+
+`/plugin marketplace add Alex-Izquierdo/jira-fallback-skill`
 
 # Install the plugin from it
-/plugin install jira-fallback@Alex-Izquierdo/jira-fallback-skill
+`/plugin install jira-fallback@Alex-Izquierdo/jira-fallback-skill`
 
 ### From the repository
 
